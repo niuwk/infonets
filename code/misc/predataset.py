@@ -24,7 +24,7 @@ PARAMS['isnorm'] = False #True #
 def preMNIST(train=True, issave=True, download=True, params=None, **kwargs):
     rootdir = get_rootdir()
     transform = transforms.Compose([transforms.ToTensor(),
-                        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+                        transforms.Normalize((0.5,), (0.5, ))])
     path = path_join(rootdir, 'data', 'MNIST')    
     dataset = datasets.MNIST(path, train=train, download=download, transform=transform)
     ds = OrderedDataset(dataset)#, 10
